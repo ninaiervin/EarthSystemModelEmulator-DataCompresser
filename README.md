@@ -77,11 +77,6 @@ It is trained on the high-emission RCP 8.5 scenario and evaluated on the moderat
 - **Group normalization** and **SiLU activations** for training stability on small batch sizes  
 - Evaluation via **Kullback–Leibler divergence**, **MAE**, and **Kolmogorov–Smirnov tests** to assess distributional similarity
 
-### Visuals
-
-![VAE Architecture](figures/esmvae_fig_4.png)
-![Distribution Comparison](figures/esmvae_fig_5.png)
-
 ### Results
 
 - Achieved **high compression ratios** with **minimal reconstruction error** across global regions and decades  
