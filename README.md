@@ -1,6 +1,6 @@
 # Generative Modeling for Climate Science
 
-This repository presents two complementary research projects from the Hutchinson Machine Learning Research Group at Western Washington University and Pacific Northwest National Laboratory (PNNL). Both explore how **generative deep learning models**—specifically **diffusion models** and **variational autoencoders (VAEs)**—can accelerate and enhance Earth system modeling.
+This repository presents two complementary research projects from the Hutchinson Machine Learning Research Group at Western Washington University and Pacific Northwest National Laboratory (PNNL). Both explore how **generative deep learning models**, specifically **diffusion models** and **variational autoencoders (VAEs)**, can accelerate and enhance Earth system modeling.
 
 ---
 
