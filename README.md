@@ -15,10 +15,15 @@ Earth System Models (ESMs) simulate the physical, chemical, and biological proce
 
 **DiffESM** introduces a new approach: using a **denoising diffusion probabilistic model (DDPM)** to emulate ESM behavior. Once trained, DiffESM can produce full-length, daily climate realizations in hours rather than weeks—enabling large-scale analyses of **extreme weather frequencies**, **scenario exploration**, and **climate uncertainty quantification**.
 
+![DiffESM Overview](figures/diffesm_slide_7.mp4)  
+
 ### Method
 
 DiffESM extends state-of-the-art diffusion models from image generation (2D) to **spatio-temporal 3D climate data**, encoding physical domain constraints such as Earth’s spherical geometry.  
 The model learns to reconstruct realistic daily temperature and precipitation patterns conditioned on monthly or annual means.
+
+![Old Approach](figures/diffesm_slide_8_p1.png)  
+![A New Approach](figures/diffesm_slide_8_p2.png)  
 
 | Step | Description |
 |------|--------------|
@@ -26,20 +31,15 @@ The model learns to reconstruct realistic daily temperature and precipitation pa
 | 2 | Model: iterative denoising using diffusion processes |
 | 3 | Output: synthetic, physically consistent daily fields |
 
-### Visuals
-
-![DiffESM Overview](figures/diffesm_slide_7.png)
-![A New Approach](figures/diffesm_slide_8.png)
-![Diffusion Model Process](figures/diffesm_slide_9.png)
-![Visual Comparison](figures/diffesm_slide_10.png)
-![Time Domain Results](figures/diffesm_slide_11.png)
-![Daily Distribution](figures/diffesm_slide_12.png)
 
 ### Results
 
-- **Visual similarity:** DiffESM-generated fields are visually indistinguishable from ESM outputs.  
-- **Temporal accuracy:** Preserves autocorrelation (ACF) and partial autocorrelation (PACF) across global locations.  
+- **Visual similarity:** DiffESM-generated fields are visually indistinguishable from ESM outputs.
+  ![Visual Comparison](figures/diffesm_slide_10.mp4)  
+- **Temporal accuracy:** Preserves autocorrelation (ACF) and partial autocorrelation (PACF) across global locations.
+  ![Time Domain Results](figures/diffesm_slide_11.png)   
 - **Statistical fidelity:** Matches the daily distribution of real ESM data as closely as two independent ESM runs do.
+ ![Daily Distribution](figures/diffesm_slide_12.png)  
 
 ### Impact
 
@@ -70,6 +70,7 @@ The **ESM-VAE** project investigates **variational autoencoders** as a **learned
 
 The ESM-VAE leverages a **VAE-GAN architecture** to learn compact latent representations of daily temperature (TAS) and precipitation (PR) fields from CMIP6 models (MIROC6 and IPSL).  
 It is trained on the high-emission RCP 8.5 scenario and evaluated on the moderate RCP 4.5 scenario to test generalization.
+![Compression & Reconstruction](figures/esmvae_fig_3.png)  
 
 **Model Features**
 - Encoder–decoder structure with **residual** and **attention** blocks for robust feature extraction  
@@ -78,7 +79,6 @@ It is trained on the high-emission RCP 8.5 scenario and evaluated on the moderat
 
 ### Visuals
 
-![Compression & Reconstruction](figures/esmvae_fig_3.png)
 ![VAE Architecture](figures/esmvae_fig_4.png)
 ![Distribution Comparison](figures/esmvae_fig_5.png)
 
@@ -86,7 +86,11 @@ It is trained on the high-emission RCP 8.5 scenario and evaluated on the moderat
 
 - Achieved **high compression ratios** with **minimal reconstruction error** across global regions and decades  
 - Retained **distributional consistency** between original and reconstructed data (confirmed via KS tests)  
-- Model generalized effectively across unseen scenarios and ESM realizations  
+- Model generalized effectively across unseen scenarios and ESM realizations
+  ![MIROC PR Results](figures/esmvae_fig_4.png)
+  ![IPSL PR Results](figures/esmvae_fig_5.png)
+  ![MIROC TAS Results](figures/esmvae_fig_7.png)  
+  ![IPSL TAS Results](figures/esmvae_fig_6.png)  
 
 ### Key Findings
 
